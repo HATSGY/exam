@@ -1,0 +1,105 @@
+Exp 2
+
+•	git –version
+•	git config --global user.name “your git hub username”
+•	git config --global user.email “your git hub email id”
+•	git init
+•	git add exp.py (before writing this command make sure your terminal is open in same folder as of exp which you are adding)
+•	git status
+•	git commit -m “initial commit”
+•	git log
+•	git log --oneline
+•	git push 
+•	git pull
+•	To push the main branch to the remote repository and sets it as the upstream branch.
+1.	git remote -v
+2.	git remote add origin “Your project git hub url”
+3.	git branch -M main
+4.	git push -u origin main
+
+Exp 3
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing project...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying project...'
+            }
+        }
+    }
+}
+
+
+Exp 5
+App.py
+print("Hello! Docker Experiment No. 4")
+print("Python application running inside Docker.")
+
+Dockerfile
+FROM python:3.12-slim
+WORKDIR /app
+COPY app.py .
+CMD ["python", "app.py"]
+
+•	Run Following commands in terminal line wise
+1.	docker build -t exp4-image .
+2.	docker images
+3.	docker ps -a
+4.	docker run --name exp4-container exp4-image
+
+Exp 6
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "9090:80"
+  database:
+    image: redis
+now run following commands
+docker-compose config
+docker-compose up -d
+docker-compose ps
+docker-compose up -d --scale database=4
+docker-compose ps
+
+Exp 8
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jenkins Deployment</title>
+</head>
+<body>
+    <h1>My First Automated Deployment</h1>
+    <p>Deployed using GitHub and Jenkins!</p>
+</body>
+</html>
+
+git init
+git add .
+git commit -m "First commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/JenkinsDemo.git
+git push -u origin main
+
+
+if not exist "C:\JenkinsDeployment" mkdir "C:\JenkinsDeployment"
+
+copy /Y "index.html" "C:\JenkinsDeployment\index.html"
+
+if errorlevel 1 exit /b 1
+
+echo Application deployed successfully!
+
+
